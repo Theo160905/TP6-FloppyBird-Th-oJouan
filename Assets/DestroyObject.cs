@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DetruireSurPosition : MonoBehaviour
+public class DestroyObject : MonoBehaviour
 {
     void Update()
     {
