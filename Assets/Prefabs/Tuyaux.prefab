@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 2430373476215801246}
   - component: {fileID: 5526897287775595112}
   - component: {fileID: 5516582984463394694}
+  - component: {fileID: 1218737983042752305}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Score
@@ -377,7 +378,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.6354885, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.42499998, y: 3.2835, z: 1}
+  m_LocalScale: {x: 0.031875, y: 3.2835, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8543054998700861099}
@@ -453,4 +454,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3
+--- !u!114 &1218737983042752305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411929617757842321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfcc417897a688448c8681f63d85c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePoints: 1
