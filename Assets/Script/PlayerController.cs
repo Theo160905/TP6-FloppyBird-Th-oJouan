@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         isAactive = true;
         specialUses++;
         nb_Ability --;
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
         if (specialUses == maxSpecialUses)
         {
             nb_AbilityText.text = "0";
@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour
             nb_AbilityText.text = "" + nb_Ability;
         }
         yield return new WaitForSeconds(2f);
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
+        rb.velocity = new Vector2(rb.velocity.x, 1f);
         anim.Play("Idle");
         isAactive = false;
     }
