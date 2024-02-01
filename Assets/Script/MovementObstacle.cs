@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class MovementObstacle : MonoBehaviour
 {
-
-    public float speed = 5.0f;
+    private float _speed = 5.0f;
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * _speed * Time.deltaTime;
     }
 }

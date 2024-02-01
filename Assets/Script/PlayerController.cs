@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float jumpForce = 5f;
+    [SerializeField]
+    private Rigidbody2D rb;
+    private float _jumpForce = 10f;
 
-    public TextMeshProUGUI nb_AbilityText;
-    public int maxSpecialUses = 3;
-    private int specialUses = 0;
-    private int nb_Ability = 3 ;
+    [SerializeField]
+    private TextMeshProUGUI nb_AbilityText;
+    private int _maxSpecialUses = 3;
+    private int _specialUses = 0;
+    private int _nb_Ability = 3 ;
     private bool isAactive = false;
-    private int scorePointsAbility = 9;
+    private int _scorePointsAbility = 9;
 
     private Animator anim;
 
     private void Start()
     {
-        nb_AbilityText.text = "" + nb_Ability;
+        nb_AbilityText.text = "" + _nb_Ability;
         anim = GetComponent<Animator>();
     }
     void Update()
@@ -26,30 +28,35 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && specialUses < maxSpecialUses)
+        if (Input.GetKeyDown(KeyCode.B) && _specialUses < _maxSpecialUses)
         {
             StartCoroutine(StopVerticalMovement());
         }
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(new Vector2(0f, _jumpForce), ForceMode2D.Impulse);
     }
 
     IEnumerator StopVerticalMovement()
     {
         anim.Play("Dance");
         isAactive = true;
-        specialUses++;
-        nb_Ability --;
+        _specialUses++;
+        _nb_Ability --;
         rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezePosition;
-        if (specialUses == maxSpecialUses)
+        if (_specialUses == _maxSpecialUses)
         {
             nb_AbilityText.text = "0";
         }
         else
         {
-            nb_AbilityText.text = "" + nb_Ability;
+            nb_AbilityText.text = "" + _nb_Ability;
         }
         yield return new WaitForSeconds(2f);
         rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
                 ScoreText scoreManager = FindObjectOfType<ScoreText>();
                 if (scoreManager != null)
                 {
-                    scoreManager.IncreaseScore(scorePointsAbility);
+                    scoreManager.IncreaseScore(_scorePointsAbility);
                 }
             }
         }

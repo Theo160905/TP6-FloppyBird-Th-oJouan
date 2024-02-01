@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpawnObject : MonoBehaviour
+public class SpawnObstacle : MonoBehaviour
 {
-    public GameObject prefabToSpawn;
-    public Transform spawnPoint; 
+    [SerializeField]
+    private GameObject prefabToSpawn;
+
+    [SerializeField]
+    private Transform spawnPoint; 
 
     void Start()
     {
@@ -18,15 +21,15 @@ public class SpawnObject : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnPrefab()
+    IEnumerator SpawnPrefab()
     {
         while (true) { 
-            SpawnObstacle();
+            SpawnObstacles();
             yield return new WaitForSeconds(2.0f);
         }
     }
 
-    private void SpawnObstacle()
+    void SpawnObstacles()
     {
         Vector2 Spawnposition = spawnPoint.position;
         Spawnposition.y = Random.Range(-2f, 2f);

@@ -441,9 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 519926143}
-  jumpForce: 10
   nb_AbilityText: {fileID: 1457402449}
-  maxSpecialUses: 3
 --- !u!95 &519926141
 Animator:
   serializedVersion: 5
@@ -834,7 +832,7 @@ GameObject:
   - component: {fileID: 856064862}
   - component: {fileID: 856064861}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: SpecialAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1390,7 +1388,7 @@ GameObject:
   - component: {fileID: 1689769671}
   - component: {fileID: 1689769670}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
