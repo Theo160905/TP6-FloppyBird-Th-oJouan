@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovementObstacle : MonoBehaviour
 {
 
-    public float speed = 2.0f;
+    public float speed = 5.0f;
 
     void Update()
     {
