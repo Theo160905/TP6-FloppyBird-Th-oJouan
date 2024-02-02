@@ -23,6 +23,7 @@ public class SpawnObstacle : MonoBehaviour
 
     IEnumerator SpawnPrefab()
     {
+        yield return new WaitForSeconds(2.0f);
         while (true) { 
             SpawnObstacles();
             yield return new WaitForSeconds(2.0f);

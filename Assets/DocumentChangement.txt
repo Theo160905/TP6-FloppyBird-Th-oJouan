@@ -6,3 +6,5 @@ Entre mes documents et le véritable projet développé, on peut observer plusie
 
 1. Tout d’abord, on peut observer des ajouts de scripts non obligatoire comme un script pour charger les scènes (LoadScene), un pour faire défiler un background (ScrollingBackground), 
 2. Des modifications de certaines mécaniques : Un ajout de compétences quand le joueur appuie sur B, changement dans le script du score (adaptation d’un script pour le rendre fonctionnelle.
+3. Ajout d'animations pour le player
+4. Ajout de musique 

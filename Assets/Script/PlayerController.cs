@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+
     private void Start()
     {
         nb_AbilityText.text = "" + _nb_Ability;
